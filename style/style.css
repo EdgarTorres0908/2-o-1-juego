@@ -1,0 +1,13 @@
+h1, h2 {
+    color: blue;
+}
+body {
+    background-color: coral;
+}
+
+img {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 350px;
+}
