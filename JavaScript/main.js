@@ -1,12 +1,37 @@
-function obtenerTiempoPartida() {
-    // Devuelve un tiempo aleatorio entre 5 y 15 segundos (puedes ajustar el rango según sea necesario)
-    return Math.floor(Math.random() * 11) + 5;
+function obtenerEleccionAleatoria() {
+    return Math.floor(Math.random() * 2) + 1;
+}
+
+function obtenerEleccionPorConsola(nombreJugador) {
+    let eleccion = parseInt(prompt(nombreJugador + ', elige 1 o 2:'));
+
+    while (isNaN(eleccion) || (eleccion !== 1 && eleccion !== 2)) {
+        alert('Por favor, elige solo 1 o 2.');
+        eleccion = parseInt(prompt(nombreJugador + ', elige 1 o 2:'));
+    }
+
+    return eleccion;
+}
+
+function determinarGanador(jugador1, jugador2, jugador3) {
+    if (jugador1 === jugador2 && jugador2 === jugador3) {
+        return null; // Empate
+    } else {
+        if (jugador1 !== jugador2 && jugador1 !== jugador3) {
+            return 1;
+        } else if (jugador2 !== jugador1 && jugador2 !== jugador3) {
+            return 2;
+        } else {
+            return 3;
+        }
+    }
 }
 
 function jugarJuego() {
     console.log('¡Bienvenido al juego 2 o 1!');
 
     const totalRondas = parseInt(prompt('Ingrese el número de rondas:'));
+
     let victoriasJugador1 = 0;
     let victoriasJugador2 = 0;
     let victoriasJugador3 = 0;
@@ -16,21 +41,20 @@ function jugarJuego() {
     for (let ronda = 1; ronda <= totalRondas; ronda++) {
         console.log('\nRonda ' + ronda);
 
-        const inicioPartida = new Date(); // Registro de tiempo de inicio
+        const inicioPartida = new Date(); // Tiempo de inicio de la partida
 
         const eleccionJugador1 = obtenerEleccionPorConsola('Jugador 1');
         const eleccionJugador2 = obtenerEleccionPorConsola('Jugador 2');
         const eleccionJugador3 = obtenerEleccionAleatoria();
 
-        const finPartida = new Date(); // Registro de tiempo de fin
+        const finPartida = new Date(); // Tiempo de fin de la partida
         const tiempoPartida = (finPartida - inicioPartida) / 1000; // Tiempo en segundos
+        tiempoTotal += tiempoPartida;
 
         console.log('Jugador 1 eligió: ' + eleccionJugador1);
         console.log('Jugador 2 eligió: ' + eleccionJugador2);
         console.log('Jugador 3 eligió: ' + eleccionJugador3);
         console.log('Tiempo de partida: ' + tiempoPartida + ' segundos');
-
-        tiempoTotal += tiempoPartida;
 
         const ganador = determinarGanador(eleccionJugador1, eleccionJugador2, eleccionJugador3);
 
