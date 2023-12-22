@@ -4,10 +4,3 @@ h1, h2 {
 body {
     background-color: coral;
 }
-
-img {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 350px;
-}
