@@ -16,14 +16,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function determinarGanador(jugador1, jugador2, jugador3) {
         if (jugador1 === jugador2 && jugador2 === jugador3) {
-            return null; // Empate
+            return null; 
         } else {
             if (jugador1 !== jugador2 && jugador1 !== jugador3) {
-                return 0; // Jugador 1 gana
+                return 0; 
             } else if (jugador2 !== jugador1 && jugador2 !== jugador3) {
-                return 1; // Jugador 2 gana
+                return 1; 
             } else {
-                return 2; // Jugador 3 gana
+                return 2; 
             }
         }
     }
