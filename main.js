@@ -46,7 +46,6 @@ document.addEventListener('DOMContentLoaded', function () {
             empates++;
         } else {
             resultadoHTML.textContent += `¡El jugador ${ganador + 1} ganó en esta ronda!`;
-
             victoriasJugadores[ganador]++;
         }
 
@@ -55,13 +54,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function determinarGanadorJuego() {
         const maxVictorias = Math.max(...victoriasJugadores);
-        const ganadores = [];
 
-        for (let i = 0; i < victoriasJugadores.length; i++) {
-            if (victoriasJugadores[i] === maxVictorias) {
-                ganadores.push(`Jugador ${i + 1}`);
-            }
+        if (maxVictorias === 0) {
+            return 'Empate en el juego';  // Ningún jugador ha ganado rondas
         }
+
+        const ganadores = victoriasJugadores.reduce((ganadores, victorias, index) => {
+            if (victorias === maxVictorias) {
+                ganadores.push(`Jugador ${index + 1}`);
+            }
+            return ganadores;
+        }, []);
 
         if (ganadores.length === 1) {
             return `El ganador del juego es: ${ganadores[0]}`;
