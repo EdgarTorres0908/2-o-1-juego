@@ -1,0 +1,13 @@
+{
+    "totalRondas": 5,
+    "jugadores": [
+        { "nombre": "Jugador Edgar" },
+        { "nombre": "Jugador Any" },
+        { "nombre": "Goku" }
+    ],
+    "premios": {
+        "primerLugar": "Trofeo de Oro",
+        "segundoLugar": "Medalla de Plata",
+        "tercerLugar": "Certificado de Participación"
+    }
+}

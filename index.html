@@ -7,16 +7,15 @@
 </head>
 <body>
     <h1>Juego 2 o 1</h1>
-    <label for="opciones">Elige 1 o 2:</label>
-    <select id="opciones">
-        <option value="1">1</option>
-        <option value="2">2</option>
-    </select>
-    <label for="rondas">Número de rondas:</label>
-    <input type="number" id="rondas" min="1" value="1">
-    <button id="jugar">Jugar</button>
-    <button id="reset">Reset</button>
-    <div id="resultados"></div>
+    <label for="input-rondas">Número de rondas:</label>
+    <input type="number" id="input-rondas" placeholder="Ingrese el número de rondas">
+
+    <div>
+        <button onclick="iniciarJuego()">Iniciar Juego</button>
+        <button onclick="resetearJuego()">Resetear Juego</button>
+    </div>
+
+    <div id="resultados-container"></div>
 
     <script src="main.js"></script>
 </body>
