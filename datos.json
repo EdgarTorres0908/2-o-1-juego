@@ -1,13 +1,13 @@
 {
-    "totalRondas": 5,
-    "jugadores": [
-        { "nombre": "Jugador Edgar" },
-        { "nombre": "Jugador Any" },
-        { "nombre": "Goku" }
-    ],
-    "premios": {
-        "primerLugar": "Trofeo de Oro",
-        "segundoLugar": "Medalla de Plata",
-        "tercerLugar": "Certificado de Participación"
-    }
+    "opciones": [1, 2],
+    "ganadores": {
+      "1": "Jugador 1 gana",
+      "2": "Jugador 2 gana",
+      "empate": "Empate"
+    },
+    "mensajes": {
+      "primer_lugar": "¡Felicidades! Eres el ganador del Trofeo de Oro.",
+      "segundo_lugar": "¡Excelente! Obtuviste el Trofeo de Plata.",
+      "tercer_lugar": "Gracias por participar. Te otorgamos un Certificado de Participación."
+}
 }

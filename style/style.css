@@ -1,6 +1,12 @@
-h1, h2 {
-    color: blue;
-}
 body {
-    background-color: coral;
-}
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+  #resultado {
+    margin-top: 20px;
+  }
+  
+  button {
+    margin-top: 10px;
+  }
